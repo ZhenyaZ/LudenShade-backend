@@ -29,7 +29,7 @@ async function LoginUser(req, res) {
           httpOnly: true,
           secure: true,
           maxAge: 86400000,
-          sameSite: 'Lax',
+          sameSite: 'None',
 
         });
 
@@ -37,7 +37,7 @@ async function LoginUser(req, res) {
           httpOnly: true,
           secure: true,
           maxAge: 15 * 60 * 1000,
-          sameSite: 'Lax',
+          sameSite: 'None',
 
         });
 
