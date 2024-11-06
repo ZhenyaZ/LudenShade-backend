@@ -29,16 +29,16 @@ async function LoginUser(req, res) {
           httpOnly: true,
           secure: true,
           maxAge: 24 * 60 * 60 * 1000,
-          sameSite: 'Lax',
-          domain: 'vercel.app'
+          sameSite: 'None',
+
         });
 
         res.header('Access-Control-Allow-Credentials', 'true').cookie('accessToken', jwt_access_token, {
           httpOnly: true,
           secure: true,
           maxAge: 24 * 60 * 60 * 1000,
-          sameSite: 'Lax',
-          domain: 'vercel.app'
+          sameSite: 'None',
+
         });
 
         res
