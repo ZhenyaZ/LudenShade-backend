@@ -3,6 +3,7 @@ var express = require('express');
 const http = require('http');
 const cors = require('cors');
 const morgan = require('morgan');
+const cookieSession = require('cookie-session')
 const cookieParser = require('cookie-parser');
 const mongoose = require('mongoose');
 const routes = require('./src/routes/routes');
@@ -19,6 +20,15 @@ const io = new Server(server, {
 
 require('dotenv').config();
 
+app.use(cookieSession({
+  name: 'session',
+  secure: true,
+  sameSite: 'none'
+}))
+app.use((req,res,next)=>{
+  req['sessionCookies'].secure = true;
+  next();
+})
 app.use(cors({ origin: process.env.URI, credentials: true }));
 app.use(morgan('tiny'));
 app.use(express.json());
