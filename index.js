@@ -20,12 +20,7 @@ const io = new Server(server, {
 
 require('dotenv').config();
 
-app.use(cookieSession({
-  name: 'session',
-  secure: true,
-  sameSite: 'none',
-  keys: ['key1']
-}))
+
 
 app.use(cors({ origin: process.env.URI, credentials: true }));
 app.use(morgan('tiny'));
