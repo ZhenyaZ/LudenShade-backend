@@ -30,7 +30,7 @@ async function LoginUser(req, res) {
           secure: true,
           maxAge: 24 * 60 * 60 * 1000,
           sameSite: 'Lax',
-          domain: 'ludenshade-frontend.vercel.app'
+          domain: 'vercel.app'
         });
 
         res.header('Access-Control-Allow-Credentials', 'true').cookie('accessToken', jwt_access_token, {
@@ -38,7 +38,7 @@ async function LoginUser(req, res) {
           secure: true,
           maxAge: 24 * 60 * 60 * 1000,
           sameSite: 'Lax',
-          domain: 'ludenshade-frontend.vercel.app'
+          domain: 'vercel.app'
         });
 
         res
