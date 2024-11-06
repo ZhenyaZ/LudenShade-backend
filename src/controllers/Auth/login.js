@@ -27,17 +27,17 @@ async function LoginUser(req, res) {
         res
         .header('Access-Control-Allow-Credentials', 'true').cookie('refreshToken', jwt_refresh_token, {
           httpOnly: true,
-          // secure: true,
-          maxAge: 24 * 60 * 60 * 1000,
-          sameSite: 'None',
+          secure: true,
+          maxAge: 86400000,
+          sameSite: 'Lax',
 
         });
 
         res.header('Access-Control-Allow-Credentials', 'true').cookie('accessToken', jwt_access_token, {
           httpOnly: true,
-          // secure: true,
-          maxAge: 24 * 60 * 60 * 1000,
-          sameSite: 'None',
+          secure: true,
+          maxAge: 15 * 60 * 1000,
+          sameSite: 'Lax',
 
         });
 
