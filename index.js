@@ -25,10 +25,7 @@ app.use(cookieSession({
   secure: true,
   sameSite: 'none'
 }))
-app.use((req,res,next)=>{
-  req['sessionCookies'].secure = true;
-  next();
-})
+
 app.use(cors({ origin: process.env.URI, credentials: true }));
 app.use(morgan('tiny'));
 app.use(express.json());
