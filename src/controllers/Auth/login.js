@@ -24,11 +24,13 @@ async function LoginUser(req, res) {
           { expiresIn: '1d' },
         );
 
-        res.header('Access-Control-Allow-Credentials', 'true').cookie('refreshToken', jwt_refresh_token, {
+        res
+        .header('Access-Control-Allow-Credentials', 'true').cookie('refreshToken', jwt_refresh_token, {
           httpOnly: true,
           secure: true,
           maxAge: 24 * 60 * 60 * 1000,
           sameSite: 'None',
+          domain: 'ludenshade-frontend.vercel.app'
         });
 
         res.header('Access-Control-Allow-Credentials', 'true').cookie('accessToken', jwt_access_token, {
@@ -36,6 +38,7 @@ async function LoginUser(req, res) {
           secure: true,
           maxAge: 24 * 60 * 60 * 1000,
           sameSite: 'None',
+          domain: 'ludenshade-frontend.vercel.app'
         });
 
         res
